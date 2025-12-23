@@ -22,10 +22,10 @@ Each row shows how different spatial acceleration structures subdivide space and
 #### Octree — Uniform Spatial Subdivision (Depths: 0, 1, 2, 8)
 
 <div align="left">
-  <img src="Assets/Resources/octree-depth-0.png" width="240">
-  <img src="Assets/Resources/octree-depth-1.png" width="240">
-  <img src="Assets/Resources/octree-depth-2.png" width="240">
-  <img src="Assets/Resources/octree-depth-8.png" width="240">
+  <img src="Assets/Resources/octree-depth-0.png" width="180">
+  <img src="Assets/Resources/octree-depth-1.png" width="165">
+  <img src="Assets/Resources/octree-depth-2.png" width="162">
+  <img src="Assets/Resources/octree-depth-8.png" width="186.5">
 </div>
 
 
