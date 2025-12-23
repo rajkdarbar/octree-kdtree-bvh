@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BVH
+public class MedianSplitBVH
 {
     public BVHNode root;
     public int maxTrianglesPerLeaf = 256;
 
-    public BVH(List<TriangleInfo> triangleList)
+    public MedianSplitBVH(List<TriangleInfo> triangleList)
     {
         root = Build(triangleList, 0);
     }

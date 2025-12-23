@@ -10,15 +10,15 @@ public class BVHManager : MonoBehaviour
     private List<TriangleInfo> triangleList = new();
     private List<TriangleInfo> tris;
 
-    private BVH simpleBVH;
+    private MedianSplitBVH medianBVH;
     private HybridSplitBVH hybridBVH;
 
     [Header("BVH Tree Depth Info")]
-    public int simpleBVHDepth;
+    public int medianBVHDepth;
     public int hybridBVHDepth;
 
     [Header("Visualization Settings")]
-    public bool showSimpleBVH = false;
+    public bool showMedianBVH = false;
     public bool showHybridBVH = false;
 
     [Range(0, 32)]
@@ -46,10 +46,10 @@ public class BVHManager : MonoBehaviour
 
         tris = ExtractTriangles(mf);
 
-        simpleBVH = new BVH(tris); // build BVH tree using median split
+        medianBVH = new MedianSplitBVH(tris); // build BVH tree using median split
         hybridBVH = new HybridSplitBVH(tris); // build BVH tree combining median split and Surface Area Heuristic (SAH)
 
-        simpleBVHDepth = ComputeDepth(simpleBVH.root);
+        medianBVHDepth = ComputeDepth(medianBVH.root);
         hybridBVHDepth = ComputeDepth(hybridBVH.root);
 
         UpdateMaxTreeDepth();
@@ -70,17 +70,17 @@ public class BVHManager : MonoBehaviour
             if (!IsUniformScale(currentScale))
             {
                 tris = ExtractTriangles(mf);
-                simpleBVH = new BVH(tris);
+                medianBVH = new MedianSplitBVH(tris);
                 hybridBVH = new HybridSplitBVH(tris);
             }
             else
             {
                 UpdateTrianglePositions(tris, mf);
-                simpleBVH.Refit(simpleBVH.root);
+                medianBVH.Refit(medianBVH.root);
                 hybridBVH.Refit(hybridBVH.root);
             }
 
-            simpleBVHDepth = ComputeDepth(simpleBVH.root);
+            medianBVHDepth = ComputeDepth(medianBVH.root);
             hybridBVHDepth = ComputeDepth(hybridBVH.root);
 
             UpdateMaxTreeDepth();
@@ -140,18 +140,18 @@ public class BVHManager : MonoBehaviour
 
     void OnValidate()
     {
-        if (showHybridBVH && showSimpleBVH)
-            showSimpleBVH = false; // only one stays true      
+        if (showHybridBVH && showMedianBVH)
+            showMedianBVH = false; // only one stays true      
 
         UpdateMaxTreeDepth();
     }
 
     void OnDrawGizmos()
     {
-        if (showSimpleBVH && simpleBVH != null && simpleBVH.root != null)
+        if (showMedianBVH && medianBVH != null && medianBVH.root != null)
         {
             nodeColor = Color.cyan;
-            DrawBVHNode(simpleBVH.root, 0);
+            DrawBVHNode(medianBVH.root, 0);
         }
 
         if (showHybridBVH && hybridBVH != null && hybridBVH.root != null)
@@ -191,7 +191,7 @@ public class BVHManager : MonoBehaviour
 
     void UpdateMaxTreeDepth()
     {
-        int visibleDepth = showHybridBVH ? hybridBVHDepth : simpleBVHDepth;
+        int visibleDepth = showHybridBVH ? hybridBVHDepth : medianBVHDepth;
         clampedMaxDepthToDraw = Mathf.Clamp(userMaxDepthToDraw, 0, visibleDepth);
     }
 }

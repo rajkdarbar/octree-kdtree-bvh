@@ -2,7 +2,7 @@
 
 KD-Tree Variants Overview
 
-1️⃣ ObjectKDTree  (a.k.a. centroid-based KD-Tree)
+1️⃣ CentroidKDTree (a.k.a. centroid-based KD-Tree)
     - Build the overall bounding box for the current node.
     - Find the *longest axis* of that box.
     - Compute the split plane at the *midpoint* of that axis.
@@ -32,7 +32,7 @@ public class KDTreeManager : MonoBehaviour
 {
     public GameObject _3DModel;
 
-    public enum KDTreeMode { Spatial, Object }
+    public enum KDTreeMode { Spatial, Centroid }
     [Header("KDTree Settings")]
     public KDTreeMode buildMode = KDTreeMode.Spatial;
 
@@ -72,7 +72,7 @@ public class KDTreeManager : MonoBehaviour
         if (buildMode == KDTreeMode.Spatial)
             kdTree = new SpatialKDTree(triangleList);
         else
-            kdTree = new ObjectKDTree(triangleList);
+            kdTree = new CentroidKDTree(triangleList);
 
         kdTreeDepth = ComputeDepth(kdTree.RootNode);
         clampedMaxDepthToDraw = Mathf.Clamp(userMaxDepthToDraw, 0, kdTreeDepth);
@@ -89,7 +89,7 @@ public class KDTreeManager : MonoBehaviour
             if (buildMode == KDTreeMode.Spatial)
                 kdTree = new SpatialKDTree(triangleList);
             else
-                kdTree = new ObjectKDTree(triangleList);
+                kdTree = new CentroidKDTree(triangleList);
 
             kdTreeDepth = ComputeDepth(kdTree.RootNode);
             clampedMaxDepthToDraw = Mathf.Clamp(userMaxDepthToDraw, 0, kdTreeDepth);

@@ -429,7 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1663404932}
   showOctree: 0
-  userMaxDepthToDraw: 4
+  userMaxDepthToDraw: 0
 --- !u!1 &1082216347
 GameObject:
   m_ObjectHideFlags: 0

@@ -428,9 +428,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _3DModel: {fileID: 1118893351}
-  buildMode: 0
+  buildMode: 1
   kdTreeDepth: 10
-  userMaxDepthToDraw: 5
+  userMaxDepthToDraw: 0
   showKDTree: 0
 --- !u!1 &1082216347
 GameObject:

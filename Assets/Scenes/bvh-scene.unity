@@ -428,11 +428,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _3DModel: {fileID: 1353370409}
-  simpleBVHDepth: 0
+  medianBVHDepth: 0
   hybridBVHDepth: 0
-  showSimpleBVH: 0
-  showHybridBVH: 1
-  userMaxDepthToDraw: 2
+  showMedianBVH: 1
+  showHybridBVH: 0
+  userMaxDepthToDraw: 0
 --- !u!1 &1082216347
 GameObject:
   m_ObjectHideFlags: 0

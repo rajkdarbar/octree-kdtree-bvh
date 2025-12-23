@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectKDTree : IKDTree
+public class CentroidKDTree : IKDTree
 {
     public KDNode root;
     public int maxTrianglesPerLeaf = 256;
@@ -12,7 +12,7 @@ public class ObjectKDTree : IKDTree
         get { return root; }
     }
 
-    public ObjectKDTree(List<TriangleInfo> triangleList)
+    public CentroidKDTree(List<TriangleInfo> triangleList)
     {
         root = Build(triangleList, 0);
     }
