@@ -18,7 +18,6 @@ The repository includes:
 
 Each row shows how different spatial acceleration structures subdivide space and geometry at increasing tree depths (0, 1, 2, and 8).
 
-
 #### Octree — Uniform Spatial Subdivision (Depths: 0, 1, 2, 8)
 
 <div align="left">
@@ -27,7 +26,6 @@ Each row shows how different spatial acceleration structures subdivide space and
   <img src="Assets/Resources/octree-depth-2.png" width="162">
   <img src="Assets/Resources/octree-depth-8.png" width="186.5">
 </div>
-
 
 #### KD-Tree — Axis-Aligned Space Partitioning (Depths: 0, 1, 2, 8)
 
@@ -38,8 +36,7 @@ Each row shows how different spatial acceleration structures subdivide space and
   <img src="Assets/Resources/kdtree-depth-8.png" width="173.15">
 </div>
 
-
-#### BVH — Bounding Volume Hierarchy (Depths: 0, 1, 2, 8)
+#### BVH — Hierarchical Bounding Volumes Around Geometry (Depths: 0, 1, 2, 8)
 
 <div align="left">
   <img src="Assets/Resources/bvh-depth-0.png" width="175">
@@ -49,6 +46,7 @@ Each row shows how different spatial acceleration structures subdivide space and
 </div>
 
 ---
+
 
 
 
