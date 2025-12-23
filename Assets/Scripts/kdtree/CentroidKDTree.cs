@@ -42,7 +42,7 @@ public class CentroidKDTree : IKDTree
         List<TriangleInfo> leftTris = new();
         List<TriangleInfo> rightTris = new();
 
-        // Object-based KD-Tree: partitions triangles by centroid position (no duplicates)
+        // Centroid-based KD-Tree: partitions triangles by centroid position (no duplicates)
         foreach (var tri in tris)
         {
             float c = tri.centroid[axis];
