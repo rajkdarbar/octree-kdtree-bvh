@@ -49,7 +49,7 @@ Each row shows how different spatial acceleration structures subdivide space and
 
 ## 🎥 Demo Video
 
-[This video](https://youtu.be/Dfn9mNK74pE) provides a high-level walkthrough of the project, demonstrating how to explore and interact with the spatial acceleration structures in Unity.
+[This video](https://youtu.be/HVzinybtzFs) provides a high-level walkthrough of the project, demonstrating how to explore and interact with the spatial acceleration structures in Unity.
 
 
 
