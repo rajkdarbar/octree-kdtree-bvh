@@ -45,7 +45,7 @@ Each row shows how different spatial acceleration structures subdivide space and
   <img src="Assets/Resources/bvh-depth-0.png" width="175">
   <img src="Assets/Resources/bvh-depth-1.png" width="174">
   <img src="Assets/Resources/bvh-depth-2.png" width="169">
-  <img src="Assets/Resources/bvh-depth-8.png" width="177">
+  <img src="Assets/Resources/bvh-depth-8.png" width="176.5">
 </div>
 
 ---
